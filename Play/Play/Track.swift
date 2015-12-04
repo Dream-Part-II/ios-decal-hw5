@@ -13,7 +13,6 @@ class Track {
     var title: String!
     var artist: String!
     var artworkURL: String!
-    var canStream: Bool!
     
     init (data: NSDictionary) {
         id = data.objectForKey("id") as! Int
@@ -32,7 +31,6 @@ class Track {
             largerSize = "t500x500.jpg"
         }
         artworkURL = artworkURL.stringByReplacingOccurrencesOfString(originalSize, withString: largerSize)
-        canStream = data.objectForKey("streamable") as! Bool
     }
 
     func getURL() -> NSURL {
